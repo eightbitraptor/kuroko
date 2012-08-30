@@ -1,4 +1,4 @@
-# Cucumber::Puppet
+# Kuroko
 
 A cucumber plugin to facilitate integration testing of Puppet manifests using Vagrant.
 
@@ -6,7 +6,7 @@ A cucumber plugin to facilitate integration testing of Puppet manifests using Va
 
 Add this line to your application's Gemfile:
 
-    gem 'cucumber-puppet'
+    gem 'kuroko'
 
 And then execute:
 
@@ -14,18 +14,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cucumber-puppet
+    $ gem install kuroko
 
 ## Usage
 
 Require the library in your `features/support/env.rb`
 
-    require 'cucumber-puppet'
+    require 'kuroko'
 
 Configure the library to point to a vagrant environment (ie. a directory containing a Vagrantfile) to test your puppet repositories against
 
-    Cucumber::Puppet.configure do |config|
+    Kuroko.configure do |config|
       config.vagrant_root = File.expand_path(File.join(__FILE__, 'vagrant_root'))
+    end
 
 ## Contributing
 

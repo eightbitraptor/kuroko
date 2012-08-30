@@ -1,6 +1,6 @@
 # Cucumber::Puppet
 
-A cucumber plugin to allow integraion testing of Puppet manifests using Vagrant.
+A cucumber plugin to facilitate integration testing of Puppet manifests using Vagrant.
 
 ## Installation
 

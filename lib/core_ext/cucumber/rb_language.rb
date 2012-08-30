@@ -4,7 +4,7 @@ module Cucumber
       alias_method :extend_world_original, :extend_world
 
       def extend_world
-        @current_world.extend(Cucumber::Puppet::VagrantSupport)
+        @current_world.extend(Kuroko::VagrantSupport)
         extend_world_original
       end
     end

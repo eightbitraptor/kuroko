@@ -1,22 +1,22 @@
 require 'spec_helper'
-require 'cucumber-puppet'
+require 'kuroko'
 
 describe "configuring Cucumber Puppet" do
   it "has a configuration api" do
-    Cucumber::Puppet.should respond_to(:configure)
+    Kuroko.should respond_to(:configure)
   end
 
   it 'yields the configuration instance to the block' do
-    Cucumber::Puppet.configure do |c|
-      c.should == Cucumber::Puppet::Configuration.instance
+    Kuroko.configure do |c|
+      c.should == Kuroko::Configuration.instance
     end
   end
 
-  describe Cucumber::Puppet::Configuration do
-    subject{ Cucumber::Puppet::Configuration.instance }
+  describe Kuroko::Configuration do
+    subject{ Kuroko::Configuration.instance }
 
     it "is a singleton" do
-      subject.should == Cucumber::Puppet::Configuration.instance
+      subject.should == Kuroko::Configuration.instance
     end
 
     it 'stores the vagrant_root path' do

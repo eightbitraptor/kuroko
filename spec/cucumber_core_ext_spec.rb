@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'cucumber-puppet'
+require 'kuroko'
 
 describe "Monkeypatching Cucumber" do
   subject{ Cucumber::RbSupport::RbLanguage.new }
@@ -7,6 +7,6 @@ describe "Monkeypatching Cucumber" do
   it "extends the world with the VagrantSupport module" do
     subject.extend_world
 
-    subject.current_world.class.ancestors.should include(Cucumber::Puppet::VagrantSupport)
+    subject.current_world.class.ancestors.should include(Kuroko::VagrantSupport)
   end
 end

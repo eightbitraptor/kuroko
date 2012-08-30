@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'cucumber-puppet'
+require 'kuroko'
 
 describe "VagrantSupport Module" do
-  subject{ Object.new.extend(Cucumber::Puppet::VagrantSupport) }
+  subject{ Object.new.extend(Kuroko::VagrantSupport) }
   let(:mock_env){ double('Environment', cli: nil) }
 
   before do
@@ -60,7 +60,7 @@ describe "VagrantSupport Module" do
 
       expect{
         subject.run_vagrant_command('hostname')
-      }.to raise_error(Cucumber::Puppet::VagrantNotRunningException)
+      }.to raise_error(Kuroko::VagrantNotRunningException)
     end
 
     it "sets the vagrant command to execute" do
@@ -80,7 +80,7 @@ describe "VagrantSupport Module" do
 
       expect{
         subject.run_vagrant_command('hostname')
-      }.to raise_error(Cucumber::Puppet::VagrantSshCommandError)
+      }.to raise_error(Kuroko::VagrantSshCommandError)
     end
 
     it "doesn't check the exit status with no_verify" do
@@ -88,7 +88,7 @@ describe "VagrantSupport Module" do
 
       expect{
         subject.run_vagrant_command('hostname', no_verify: true)
-      }.to_not raise_error(Cucumber::Puppet::VagrantSshCommandError)
+      }.to_not raise_error(Kuroko::VagrantSshCommandError)
     end
 
     describe "running commands with sudo" do

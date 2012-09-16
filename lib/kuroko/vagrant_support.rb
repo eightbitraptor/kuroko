@@ -2,7 +2,7 @@ module Kuroko
   module VagrantSupport
 
     at_exit {
-      if ENV['KEEP_RUNNING'] != "true"
+      unless ENV['KEEP_RUNNING']
         new_env = Object.new.extend(self).send(:vagrant_env)
         new_env.cli('destroy', '-f')
       end

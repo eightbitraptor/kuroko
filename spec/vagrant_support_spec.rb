@@ -88,7 +88,7 @@ describe "VagrantSupport Module" do
 
       expect{
         subject.run_vagrant_command('hostname', no_verify: true)
-      }.to_not raise_error(Kuroko::VagrantSshCommandError)
+      }.to_not raise_error
     end
 
     describe "running commands with sudo" do
